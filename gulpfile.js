@@ -37,7 +37,7 @@ gulp.task('javascript', function() {
 
 gulp.task('svg', function() {
   return gulp.src('./source/index.html')
-    .pipe(inject(gulp.src('./source/attchs/**/*.svg')
+    .pipe(inject(gulp.src('./source/images/**/*.svg')
       .pipe(svg(function(file) {
         return {
           plugins: [{
@@ -59,16 +59,16 @@ gulp.task('svg', function() {
     .pipe(gulp.dest('./source'));
 });
 
-gulp.task('attchs', function() {
-  return gulp.src('./source/attchs/**/*.+(png|jpeg|jpg|gif)')
-    .pipe(gulp.dest('./source/assets/attchs'));
+gulp.task('images', function() {
+  return gulp.src('./source/images/**/*.+(png|jpeg|jpg|gif)')
+    .pipe(gulp.dest('./source/assets/images'));
 });
 
 gulp.task('default', gulp.series(
     'sass',
     'javascript',
     'svg',
-    'attchs',
+    'images',
     function() {
       browserSync({
         server: {
@@ -81,7 +81,7 @@ gulp.task('default', gulp.series(
       gulp.watch('./source/sass/**/*.+(scss|sass)', gulp.series('sass'));
       gulp.watch('./source/js/**/*.js', gulp.series('javascript', browserSync.reload));
       gulp.watch('./source/svg/**/*.svg', gulp.series('svg', browserSync.reload));
-      gulp.watch('./source/attchs/**/*.+(png|jpeg|jpg|gif)', gulp.series('attchs', browserSync.reload));
+      gulp.watch('./source/images/**/*.+(png|jpeg|jpg|gif)', gulp.series('images', browserSync.reload));
     }
   )
 );
