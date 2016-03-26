@@ -47,21 +47,107 @@ table
 body
   font-family: Tahoma, arial, verdana
 
-.wrap
+p
+  margin-bottom: 10px
+
+a
+  color: inherit
+  text-decoration: none
+  font-weight: bold
+
+.grid
   display: flex
-  flex-flow: row wrap
-  justify-content: space-between
+  flex-wrap: wrap
+  align-items: center
+
+.area-group
+  width: 100%
+  font-size: 20px
+  color: #fff
+  height: 100vh
 
 .area
-  display: flex
-  cursor: pointer
-  align-items: center
   justify-content: center
-  flex-basis: 33.3%
+  position: relative
+  cursor: pointer
+  width: 33.33333%
   height: 50vh
-  font-size: 20px
-  background: #2c2c2b
-  color: #fff
+  overflow: hidden
 
-.area:nth-child(odd)
-  background: #df0a15
+  &:nth-child(odd)
+    background: #2c2c2b
+
+  &:nth-child(even)
+    background: #fff
+    color: #2c2c2b
+
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    /**
+     * teste para um overlay.
+     */
+    background: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699) no-repeat
+    background-size: cover
+    opacity: 0
+    z-index: 2
+
+  &:hover,
+  &:focus
+    &:before
+      opacity: .2
+
+    .area-content
+      color: #fff
+
+    .area-video
+      opacity: 1
+
+.area-video
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+  transition: all .8s ease
+
+  video
+    height: 100%
+
+.area-content
+  text-align: center
+  font-family: 'Inconsolata'
+  color: #F6266C
+  position: relative
+  z-index: 3
+
+.content-group
+  display: none
+  height: 100vh
+  background-size: 100%
+  background-attachment: fixed
+
+  &:nth-child(odd)
+    justify-content: flex-end
+
+.content
+  width: 50%
+  height: 100vh
+  padding: 10px
+
+.extra
+  align-items: center
+  flex-direction: column
+  font-size: .7em
+  color: lighten(#2c2c2b, 50%)
+  padding: 10px
+  background: #2c2c2b
+
+  *
+    width: 100%
+
+  p:last-child
+    margin: 0

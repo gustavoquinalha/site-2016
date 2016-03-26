@@ -18,7 +18,10 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(browserSync.stream())
-        .pipe(gulp.dest('./source/assets/css'))
+        .pipe(gulp.dest('./source/assets/css')), {
+          ignorePath: '/source',
+          relative:   false
+        }
     ))
     .pipe(gulp.dest('./source'));
 });
@@ -30,7 +33,10 @@ gulp.task('javascript', function() {
         .pipe(uglify({
             mangle: false
         }))
-        .pipe(gulp.dest('./source/assets/js'))
+        .pipe(gulp.dest('./source/assets/js')), {
+          ignorePath: '/source',
+          relative:   false
+        }
     ))
     .pipe(gulp.dest('./source'));
 });
@@ -60,28 +66,27 @@ gulp.task('svg', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src('./source/images/**/*.+(png|jpeg|jpg|gif)')
+  return gulp.src('./source/images/**/*.+(png|jpeg|jpg|gif|mp4)')
     .pipe(gulp.dest('./source/assets/images'));
 });
 
 gulp.task('default', gulp.series(
-    'sass',
-    'javascript',
-    'svg',
-    'images',
-    function() {
-      browserSync({
-        server: {
-          baseDir: './source',
-          notify: false
-        }
-      });
+  'sass',
+  'javascript',
+  'svg',
+  'images',
+  function() {
+    browserSync({
+      server: {
+        baseDir: './source',
+        notify: false
+      }
+    });
 
-      gulp.watch('./source/*.html', browserSync.reload);
-      gulp.watch('./source/sass/**/*.+(scss|sass)', gulp.series('sass'));
-      gulp.watch('./source/js/**/*.js', gulp.series('javascript', browserSync.reload));
-      gulp.watch('./source/svg/**/*.svg', gulp.series('svg', browserSync.reload));
-      gulp.watch('./source/images/**/*.+(png|jpeg|jpg|gif)', gulp.series('images', browserSync.reload));
-    }
-  )
+    gulp.watch('./source/*.html', browserSync.reload);
+    gulp.watch('./source/sass/**/*.+(scss|sass)', gulp.series('sass'));
+    gulp.watch('./source/js/**/*.js', gulp.series('javascript', browserSync.reload));
+    gulp.watch('./source/svg/**/*.svg', gulp.series('svg', browserSync.reload));
+    gulp.watch('./source/images/**/*.+(png|jpeg|jpg|gif|mp4)', gulp.series('images', browserSync.reload));
+  })
 );

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <title>FrontInSampa 2016</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <!-- inject:css -->
-    <link rel="stylesheet" href="/source/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <!-- endinject -->
   </head>
 
@@ -16,17 +17,120 @@
       <!-- endinject -->
     </div>
 
-    <div class="wrap">
-      <div class="area">1</div>
-      <div class="area">2</div>
-      <div class="area">3</div>
-      <div class="area">4</div>
-      <div class="area">5</div>
-      <div class="area">6</div>
-    </div>
+    <main role="main">
+      <!--
+      Deivid, esses seriam os conteudos dos blocos.
+      -->
+      <section class="grid content-group">
+        <div class="grid content">
+          <h1>[title]</h1>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </section>
+
+      <div class="grid area-group">
+        <section id="event" class="grid area">
+          <div class="area-content">
+            <p>< front-in-sampa-2016 ></p>
+            <p>2 de julho</p>
+            <p>< / front-in-sampa-2016 ></p>
+          </div>
+          <!--
+          Precisamos iniciar os videos de forma aleatoria.
+          -->
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <source src="/assets/images/areas-background.mp4">
+            </video>
+          </div>
+        </section>
+
+        <section class="grid area">
+          <div class="area-content">
+            < inscreva-se />
+          </div>
+
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <!-- <source src="/assets/images/areas-background.mp4"> -->
+            </video>
+          </div>
+        </section>
+
+        <section id="speakers" class="grid area">
+          <div class="area-content">
+            < palestrantes />
+          </div>
+
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <!-- <source src="/assets/images/areas-background.mp4"> -->
+            </video>
+          </div>
+        </section>
+
+        <section id="schedule" class="grid area">
+          <div class="area-content">
+            < programacao />
+          </div>
+
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <!-- <source src="/assets/images/areas-background.mp4"> -->
+            </video>
+          </div>
+        </section>
+
+        <section id="place" class="grid area">
+          <div class="area-content">
+            < local />
+          </div>
+
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <!-- <source src="/assets/images/areas-background.mp4"> -->
+            </video>
+          </div>
+        </section>
+
+        <section id="call" class="grid area">
+          <div class="area-content">
+            < call 4 proposals />
+          </div>
+
+          <div class="area-video">
+            <video muted autoplay loop>
+              <!-- <source src="/assets/images/areas-background.webm"> -->
+              <!-- <source src="/assets/images/areas-background.mp4"> -->
+            </video>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="extra grid" role="contentinfo">
+      <p>© copyright 2012 - 2016 | Todos os direitos reservados</p>
+
+      <p>
+        Desenvolvimento
+        <a href="https://twitter.com/deividmarques" target="_blank">@deividmarques</a>
+        <a href="https://twitter.com/seescrevekeit" target="_blank">@seescrevekeit</a>
+      </p>
+
+      <p>
+        <a href="http://pt-br.confcodeofconduct.com/" target="_blank">Código de Conduta</a>
+      </p>
+    </footer>
 
     <!-- inject:js -->
-    <script src="/source/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     <!-- endinject -->
   </body>
 </html>
