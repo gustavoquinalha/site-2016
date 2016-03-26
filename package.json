@@ -1,0 +1,25 @@
+{
+  "name": "frontinsampa",
+  "version": "1.0.0",
+  "description": "Site completo do Frontinsampa versao 2016",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontinsampa/site-2016.git"
+  },
+  "author": "Deivid Marques e Keit Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frontinsampa/site-2016/issues"
+  },
+  "homepage": "https://github.com/frontinsampa/site-2016#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.2.0"
+  }
+}
